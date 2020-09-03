@@ -13,9 +13,9 @@ dev用に別途コピーを作成して作業➝Git Pullで本番反映するこ
 
 
 ### 本番用
-[GAS](https://script.google.com/d/1yV3Yu8V6DQXQNvpSDpqBhunPwaARM5hjlcd9br5Awg_FDhDS8XdjMKlY/edit?mid=ACjPJvF8ge4_hAUhLteCkubVS9RTVllu75MdQhqYtB9fR7fNenmNe0xThDaFSStxFIFLFYEd8rIHEh1kS0vKuI9uwdJpTrs6WhUyNBK7leem_ANeCi_F3zDbpW9feKwX02UbeqJeJmovUpY&uiv=2)
+[GAS Page](https://script.google.com/d/1yV3Yu8V6DQXQNvpSDpqBhunPwaARM5hjlcd9br5Awg_FDhDS8XdjMKlY/edit?mid=ACjPJvF8ge4_hAUhLteCkubVS9RTVllu75MdQhqYtB9fR7fNenmNe0xThDaFSStxFIFLFYEd8rIHEh1kS0vKuI9uwdJpTrs6WhUyNBK7leem_ANeCi_F3zDbpW9feKwX02UbeqJeJmovUpY&uiv=2)
 
-[ss:](https://docs.google.com/spreadsheets/d/1DhtszhxlhgJtfdl3ER3A_9ZVqLUTDHg8wyycpZOSVjM/edit#gid=0)
+[Spread Sheet](https://docs.google.com/spreadsheets/d/1DhtszhxlhgJtfdl3ER3A_9ZVqLUTDHg8wyycpZOSVjM/edit#gid=0)
 
 
 引用記事：
