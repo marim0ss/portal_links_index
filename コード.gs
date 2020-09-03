@@ -1,4 +1,4 @@
-// V8は無効のままにしておく 追加修正時はdev用にコピーを別途作り、そこで作業→この本番に反映する
+// V8は無効のままにしておく 追加修正時はdev用にコピーを別途作り、そこで作業→Git Pullでこの本番に反映する
 function onOpen(e) {
   var ui = SpreadsheetApp.getUi();
   ui.createMenu('▶リンク集作成')
