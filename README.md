@@ -1,12 +1,14 @@
 # portal_links_index
 
-[trello](https://trello.com/c/kVCOmn16/10-%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AE%E5%89%8A%E6%B8%9B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%80%83%E3%81%88%E3%82%8B)
+:checkered_flag: [trello](https://trello.com/c/kVCOmn16/10-%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B%E3%81%AE%E5%89%8A%E6%B8%9B%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6%E8%80%83%E3%81%88%E3%82%8B)
 
-BEポータルのリンク集
+:octocat: BEポータルサイトのリンク集（ss内容を整形して表示させるアプリ）
 
-GCP新規プロジェクトとして紐づけ済
+:octocat: GCP新規プロジェクトとして紐づけ済
 
-※機能追加・修正する場合は本番のVer更新→公開が必要となるので、dev用に別途コピーを作成して作業➝Git Pullで本番反映すること
+:octocat: ssヘッダーの文言は、ssで内容書き換えても反映されない。GAS側で行う
+
+:warning: :octocat: :warning: 機能追加・修正する場合は本番のVer更新→公開が必要となるので、dev用に別途コピーを作成して作業➝Git Pullで本番反映すること
 >（ss側の操作の一部＝リンク行追加   は他のユーザーも許可しているため）
 
 
