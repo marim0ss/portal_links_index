@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
+
+<script type="text/javascript">
+  var DEVELOPER_KEY = 'ここにデベロッパーキーを入れます';
+  var DIALOG_DIMENSIONS = {width: 750, height: 480};
+  var pickerApiLoaded = true;
+
+  //Google Picker API呼び出し
+  gapi.load('picker', {'callback': function() {
+    pickerApiLoaded = true;
+  }});
+  
+  getOAuthToken();
+
+  //OAuthにて認証作業
+  function getOAuthToken() {
+    google.script.run.withSuccessHandler(createPicker)
+        .withFailureHandler(showError).getOAuthToken();
+  }
+
+  //Picker Dialogを表示する
+  function createPicker(token) {
+    if (pickerApiLoaded && token) {
+      var docsView = new google.picker.DocsView()
+          .setIncludeFolders(true) 
+          .setSelectFolderEnabled(true)
+          .setParent("root");
+          
+      var picker = new google.picker.PickerBuilder()
+          .setLocale('ja')　
+          .addView(docsView)
+          .enableFeature(google.picker.Feature.NAV_HIDDEN)
+          .hideTitleBar()
+          .setOAuthToken(token)
+          .setDeveloperKey(DEVELOPER_KEY)
+          .setCallback(pickerCallback)
+          .setSize(DIALOG_DIMENSIONS.width - 2,
+              DIALOG_DIMENSIONS.height - 2)
+          .build();
+      picker.setVisible(true);
+    } else {
+      showError('Google Picker APIをロード出来ませんでした。');
+    }
+  }
+
+  //Callbackデータを受け取る
+  function pickerCallback(data) {
+    var action = data[google.picker.Response.ACTION];
+    if (action == google.picker.Action.PICKED) {
+      var doc = data[google.picker.Response.DOCUMENTS][0];
+     var id = doc[google.picker.Document.ID];
+     var url = doc[google.picker.Document.URL];
+      var title = doc[google.picker.Document.NAME];
+      document.getElementById('result').innerHTML =
+          '<b>選択物:</b><br>名称: <a href="' + url + '">' + title + '</a><br>ID: ' + id;
+     google.script.run.telepon(url,id,title);
+    } else if (action == google.picker.Action.CANCEL) {
+      document.getElementById('result').innerHTML = 'Pickerはキャンセルされました。';
+    }
+  }
+
+  //エラー表示用
+  function showError(message) {
+    document.getElementById('result').innerHTML = 'エラー: ' + message;
+  }
+</script>
+
+<div>
+  <button class="action" onclick='getOAuthToken()'>Pick Up</button>
+  <p id='result'><font color="red"><b>ファイルだけでなく、フォルダも選択できますよ。</b></font></p>
+</div>

@@ -1,0 +1,24 @@
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+<?!= HtmlService.createHtmlOutputFromFile("css").getContent(); ?>
+<?!= HtmlService.createHtmlOutputFromFile("addoncss").getContent(); ?>
+<?!= HtmlService.createHtmlOutputFromFile("javascript").getContent(); ?>
+
+<div class="wasabi">ファイル・フォルダの選択</div>
+<p><button id="btnOK" class="active">ドライブから選択</button></p>
+<p><label><b>&nbsp;&nbsp;&nbsp;URL：</b><input type="text" name="namae" size="27" class="kinoko" placeholder="URLはこちらに入力" id="kinoko1"></label></p>
+<p><label><b>NAME：</b><input type="text" name="namae" size="27"  class="kinoko" placeholder="リンク先タイトルはこちらに入力" id="kinoko2"></label></p>
+
+<div class="wasabi">説明文の記述</div><p>
+<p><TEXTAREA class="wasabi" cols='35' rows='3' placeholder='リンク先についての説明を短く入力します。' id='kinoko3' title='説明文を入力します。'></TEXTAREA></p>
+
+
+<div class="wasabi">分類の選択</div><p>
+<div id="test2"></div>
+
+<div class="wasabi">リンクデータの作成</div><p>
+
+<div id="kurukuru">
+<button id="btnOK3" class="create" onclick="clickfunc()">作成実行</button>
+</div>

@@ -1,0 +1,101 @@
+<head>
+<link rel="stylesheet" href="https://ssl.gstatic.com/docs/script/css/add-ons.css">
+<link rel="stylesheet" type="text/css" href="https://officeforest.org/wp/library/userlist/css/jquery.dataTables.css">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" charset="utf8" src="https://officeforest.org/wp/library/userlist/jquery.js"></script>
+<script type="text/javascript" charset="utf8" src="https://officeforest.org/wp/library/userlist/jquery.dataTables.js"></script>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('#table_id').DataTable({
+      "pageLength": 15
+    });
+  } );
+</script>	
+<script type="text/javascript">
+  google.load("visualization", "1", {packages:["corechart"]});
+  google.setOnLoadCallback(test);
+
+  function test(){
+    google.script.run.withSuccessHandler(onSuccess).retdata();
+  }
+  
+  function onSuccess(data){
+    //各種データの取得
+    var sampleNode=document.getElementById("userlist");
+    var json = JSON.parse(data);
+    var jsonlength = json.length;
+    var html = "";
+    
+    //htmlにテーブルの初期タグ部分を格納する。
+    html  = "<table id=" + "table_id" + " class='display' cellspacing='0' width='100%'>"
+          + "<thead><tr>"
+          + "<th>名称</th>"
+          + "<th>説明文・関連ワード</th>"
+          + "<th>形式</th>"
+          + "<th>分類</th>"
+          + "</tr></thead>"
+          + "<tfoot><tr>"
+          + "<th>名称</th>"
+          + "<th>説明文・関連ワード</th>"
+          + "<th>形式</th>"
+          + "<th>分類</th>"
+          + "</tr></tfoot>"			 
+          + "<tbody>";
+    
+    
+    //受信データからHTMLを作成し格納する（最新記事を上にする）
+    for(var i = 0;i<jsonlength;i++){
+      if(json[i][0] == ""){
+      }else{
+        //テーブルタグを生成して格納する
+        html  += "<tr>"
+              + "<td><b><a href='" + String(json[i][1]) + "' target='_blank'>" + json[i][0] + "</a></b></td>"
+              + "<td>" + String(json[i][2]) + "</td>"
+              + "<td>" + String(json[i][3]) + "</td>"
+              + "<td>" + String(json[i][4]) + "</td>"
+              + "</tr>";      
+      }    
+    }
+    
+    //htmlにテーブルの終了タグを追加
+	html += "</tbody></table>";	
+
+    //生成したHTMLを置き換え
+    sampleNode.innerHTML = html;	
+
+    $(document).ready(function() {
+      $('#table_id').DataTable({
+        "processing": true,
+        "pageLength": 10,
+        "order": [[ 0, "desc" ]],
+        "language": {
+          "emptyTable" : "データが登録されていません。",
+          "info" : "_TOTAL_ 件中 _START_ 件から _END_ 件までを表示",
+          "infoEmpty" : "",
+          "infoFiltered" : "(_MAX_ 件からの絞り込み表示)",
+          "infoPostFix" : "",
+          "thousands" : ",",
+          "lengthMenu" : "1ページあたりの表示件数: _MENU_",
+          "loadingRecords" : "ロード中",
+          "processing" : "処理中...",
+          "search" : "検索",
+          "zeroRecords" : "該当するデータが見つかりませんでした。",
+          "paginate" : {
+            "first" : "先頭",
+            "previous" : "前へ",
+            "next" : "次へ",
+            "last" : "末尾"
+          }
+        }
+      });
+    } );
+    
+  }
+</script>
+</head>
+<div id="userlist" style="font-size: 14px;">
+<center>
+<img border="0" src="https://officeforest.org/wp/library/ProgressSpinner.gif">
+<b><div style="color:red; font-size:10pt;">整形中．．．しばらくそのままお待ち下さい！！</div></b>
+</center>
+</div>

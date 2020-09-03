@@ -1,0 +1,77 @@
+<script>
+    google.load("visualization", "1", {packages:["corechart"]});
+    google.setOnLoadCallback(test);
+    
+    function test(){
+      google.script.run.withSuccessHandler(onSuccess).urlget();
+      google.script.run.withSuccessHandler(onSuccess2).selectman();
+    }
+    
+    $(function(){
+        $('#btnOK').click(function(){
+            google.script.run.showPicker();
+        });
+    });
+
+    $(function(){
+        $('#btnOK2').click(function(){
+            google.script.run.test();
+        });
+    });
+
+    function onSuccess(data){
+      var json = JSON.parse(data);
+      document.getElementById("kinoko1").value = json[0];
+      document.getElementById("kinoko2").value = json[1];
+    }
+    function onSuccess2(data){
+      var json = JSON.parse(data);
+      document.getElementById("test2").innerHTML = json;
+    }
+
+    
+    //作成実行メインルーチン
+    function clickfunc() {
+      var array = [];
+      //値のvalidation作業
+      for(var i = 1;i<5;i++){
+        var target = "kinoko" + i;
+        var validata = document.getElementById(target).value;
+        if(validata == ""){
+          alert("値が入っていませんよ");
+          document.getElementById(target).focus();
+          return;
+        }
+        
+        if(target == "kinoko4"){
+          if(validata == "リンク先分類を選択"){
+            alert("分類が選択されていませんよ。");
+            document.getElementById(target).focus();
+            return;          
+          }
+        }
+        
+        array.push(validata);
+      }
+    
+      document.getElementById("kurukuru").innerHTML = 
+                                   "<center><div id='sunset'><img border='0' src='https://officeforest.org/wp/library/ProgressSpinner.gif'></div>"
+                                   + "<p><b><div style='color:red; font-size:10pt;'>作業中．．．しばらくお待ちください</div></b></center>";
+      google.script.run.withSuccessHandler(endpoint).insertPara(array);
+    }
+    
+    function endpoint(data){
+      if(data == true){
+        for(var i = 1;i<5;i++){
+          var target = "kinoko" + i;
+          if(i == 4){
+            document.getElementById(target).value = "リンク先分類を選択";
+          }else{
+            document.getElementById(target).value = "";
+          }
+        }
+        document.getElementById("kurukuru").innerHTML = "<p><button id='btnOK3' class='create' onclick='clickfunc()'>作成実行</button></p>";
+      }
+    }
+    
+</script>
