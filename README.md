@@ -7,7 +7,10 @@ BEポータルのリンク集
 GCP新規プロジェクトとして紐づけ済
 
 ※機能追加・修正する場合は本番のVer更新→公開が必要となるので、
-dev用に別途コピーを作成して作業➝Git Pullで本番反映すること（ss側でのリンク行追加は他の関係ユーザーもOKとしているため）
+dev用に別途コピーを作成して作業➝Git Pullで本番反映すること
+
+（ss側の操作の一部＝リンク行追加   は他のユーザーも許可しているため）
+
 
 ### 本番用
 [GAS](https://script.google.com/d/1yV3Yu8V6DQXQNvpSDpqBhunPwaARM5hjlcd9br5Awg_FDhDS8XdjMKlY/edit?mid=ACjPJvF8ge4_hAUhLteCkubVS9RTVllu75MdQhqYtB9fR7fNenmNe0xThDaFSStxFIFLFYEd8rIHEh1kS0vKuI9uwdJpTrs6WhUyNBK7leem_ANeCi_F3zDbpW9feKwX02UbeqJeJmovUpY&uiv=2)
