@@ -18,8 +18,8 @@ dev用に別途コピーを作成して作業➝Git Pullで本番反映するこ
 [Spread Sheet](https://docs.google.com/spreadsheets/d/1DhtszhxlhgJtfdl3ER3A_9ZVqLUTDHg8wyycpZOSVjM/edit#gid=0)
 
 
-引用記事：
+[引用記事](https://officeforest.org/wp/%E4%BD%9C%E6%88%90%E3%82%A2%E3%83%97%E3%83%AA/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86%E4%BD%9C%E6%88%90%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/)
 
-https://officeforest.org/wp/%E4%BD%9C%E6%88%90%E3%82%A2%E3%83%97%E3%83%AA/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86%E4%BD%9C%E6%88%90%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/
+[サーバー移動や引継時の注意点(同記事内)](https://officeforest.org/wp/%E4%BD%9C%E6%88%90%E3%82%A2%E3%83%97%E3%83%AA/%E3%83%AA%E3%83%B3%E3%82%AF%E9%9B%86%E4%BD%9C%E6%88%90%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88/)
 
 [アプリ見た目](https://sites.google.com/view/mushroom-world/%E5%9F%8B%E3%82%81%E8%BE%BC%E3%81%BF%E3%81%82%E3%82%8C%E3%81%93%E3%82%8C/gas%E3%82%A2%E3%83%97%E3%83%AA?authuser=0)
